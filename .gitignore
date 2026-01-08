@@ -1,0 +1,60 @@
+# Xcode
+**/*.xcuserstate
+**/xcuserdata/
+DerivedData/
+build/
+*.ipa
+*.dSYM
+
+# Swift Package Manager
+.swiftpm/
+.build/
+Package.resolved
+
+# CocoaPods
+Pods/
+
+# Системные файлы macOS (работают рекурсивно)
+**/.DS_Store
+**/.AppleDouble
+**/.Spotlight-V100
+**/.Trashes
+**/.fseventsd
+**/.DocumentRevisions-V100
+**/.TemporaryItems
+**/.apdisk
+**/.LSOverride
+
+# Иконки
+**/Icon
+**/Icon?
+
+# Временные файлы
+**/.VolumeIcon.icns
+**/.com.apple.timemachine.donotpresent
+
+# Секреты и конфиги
+.env
+secrets.xcconfig
+**/Keys.swift
+**/Secrets.swift
+
+# Логи
+*.log
+logs/
+
+# Временные файлы
+*~
+Thumbs.db
+ehthumbs.db
+
+# Редакторы
+.idea/
+.vscode/
+*.swp
+*.bak
+
+# Сертификаты
+*.cer
+*.p12
+*.mobileprovision
