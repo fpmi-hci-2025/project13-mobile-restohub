@@ -16,12 +16,14 @@ jobs:
     
     - name: List files (debug)
       run: |
+        echo "=== Корневая структура ==="
         ls -la
-        echo "=== Проверка .xcodeproj ==="
-        find . -name "*.xcodeproj" -type d | head -5
+        echo "=== Содержимое RestoHub ==="
+        ls -la RestoHub/
     
     - name: Build project
       run: |
+        cd RestoHub
         xcodebuild build \
           -project RestoHub.xcodeproj \
           -scheme RestoHub \
@@ -29,6 +31,7 @@ jobs:
     
     - name: Run tests
       run: |
+        cd RestoHub
         xcodebuild test \
           -project RestoHub.xcodeproj \
           -scheme RestoHub \
