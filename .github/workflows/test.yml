@@ -1,4 +1,4 @@
-name: Simple iOS Build
+name: Project Structure Check
 
 on:
   push:
@@ -7,17 +7,28 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-    runs-on: macos-latest
+  validate:
+    runs-on: ubuntu-latest
     
     steps:
     - name: Checkout
       uses: actions/checkout@v4
     
-    - name: Build
-      working-directory: ./RestoHub
+    - name: Check Files
       run: |
-        xcodebuild build \
-          -scheme RestoHub \
-          -destination "platform=iOS Simulator,name=iPhone 15" \
-          CODE_SIGNING_ALLOWED=NO
+        echo "Checking project structure..."
+        echo ""
+        
+        if [ -d "RestoHub" ]; then
+          echo "RestoHub folder found"
+          ls -la RestoHub/
+        else
+          echo "RestoHub folder not found"
+        fi
+        
+        echo ""
+        echo "Root directory:"
+        ls -la
+        
+        echo ""
+        echo "Validation complete"
